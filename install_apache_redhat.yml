@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install apache in redhat OS
+    package:
+      name: httpd
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "CentOS" 
